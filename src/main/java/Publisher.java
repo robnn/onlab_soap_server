@@ -9,7 +9,7 @@ public class Publisher {
 
         public static void main(String[] args) {
             try {
-                Endpoint.publish("http://localhost:8888/ws/service", new ServiceImpl());
+                Endpoint.publish("http://0.0.0.0:8888/ws/service", new ServiceImpl());
             } catch (CouldNotConnectException | ClassNotFoundException e) {
                 e.printStackTrace();
             }
