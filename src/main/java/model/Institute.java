@@ -1,11 +1,13 @@
 package model;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import java.io.Serializable;
 
 /**
  * Created by robin on 2017. 03. 15..
  */
-
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Institute implements Serializable{
     private Long id;
     private String name;

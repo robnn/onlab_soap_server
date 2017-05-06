@@ -1,9 +1,6 @@
 package service;
 
-import model.Comment;
-import model.Institute;
-import model.Subject;
-import model.User;
+import model.*;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -29,19 +26,19 @@ public interface Service {
     @WebMethod
     Institute getInstitutebyId(long id);
     @WebMethod
-    ArrayList<Institute> getAllInstitutes();
+    ListWrapper<Institute> getAllInstitutes();
     @WebMethod
     void addInstitute(Institute institute);
 
     @WebMethod
-    ArrayList<Subject> getSubjectsByInstitute(Institute institute);
+    ListWrapper<Subject> getSubjectsByInstitute(Institute institute);
     @WebMethod
     Subject getSubjectByName(String subjectName);
     @WebMethod
     void addSubject(Subject subject);
 
     @WebMethod
-    ArrayList<Comment> getCommentsBySubject(Subject subject);
+    ListWrapper<Comment> getCommentsBySubject(Subject subject);
     @WebMethod
     void addComment(Comment comment);
 }
