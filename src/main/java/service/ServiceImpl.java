@@ -3,7 +3,10 @@ package service;
 import dal.DataAccesLayer;
 import dal.OnlabDal;
 import dal.exception.CouldNotConnectException;
-import model.*;
+import model.Comment;
+import model.Institute;
+import model.Subject;
+import model.User;
 
 import javax.jws.WebService;
 import java.util.ArrayList;
@@ -49,8 +52,8 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public ListWrapper<Institute> getAllInstitutes() {
-        return new ListWrapper<>(dl.allInstituteQuery());
+    public ArrayList<Institute> getAllInstitutes() {
+        return dl.allInstituteQuery();
     }
 
     @Override
@@ -59,8 +62,8 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public ListWrapper<Subject> getSubjectsByInstitute(Institute institute) {
-        return new ListWrapper<>(dl.getSubjectsByInstitute(institute));
+    public ArrayList<Subject> getSubjectsByInstitute(Institute institute) {
+        return dl.getSubjectsByInstitute(institute);
     }
 
     @Override
@@ -74,8 +77,8 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public ListWrapper<Comment> getCommentsBySubject(Subject subject) {
-        return new ListWrapper<>(dl.getCommentsBySubjectQuery(subject));
+    public ArrayList<Comment> getCommentsBySubject(Subject subject) {
+        return dl.getCommentsBySubjectQuery(subject);
     }
 
     @Override
