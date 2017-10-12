@@ -54,6 +54,26 @@ public class OnlabDal implements DataAccesLayer {
     }
 
     @Override
+    public boolean validateUser(User u) {
+        try {
+            String query = "SELECT count(*) as Count FROM USER_TABLE " +
+                    "WHERE user_name = ? and password = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1,u.getUserName());
+            preparedStatement.setString(2, u.getPassword());
+            ResultSet rset = preparedStatement.executeQuery();
+            rset.next();
+            Long value = rset.getLong("Count");
+            if(value == 1)
+                return true;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
     public ArrayList<Institute> allInstituteQuery() {
 
         ArrayList<Institute> result = new ArrayList<>();

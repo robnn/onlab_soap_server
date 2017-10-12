@@ -7,8 +7,6 @@ import model.Subject;
 import model.User;
 
 import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by robin on 4/6/17.
  */
@@ -20,6 +18,7 @@ public interface DataAccesLayer {
     void addInstituteQuery(Institute institute);
 
     //user
+    public boolean validateUser(User u);
     User registerQuery(User u);
     String getNameByIdQuery(long uId);
     long getIdByNameQuery(String uName);

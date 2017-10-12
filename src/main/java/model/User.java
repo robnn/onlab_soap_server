@@ -6,16 +6,16 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import java.io.Serializable;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class User  implements Serializable{
-    private Long id;
+    private long id;
     private String userName;
     private String realName;
-    private Long instituteId;
+    private long instituteId;
     private String password;
 
     public User() {
     }
 
-    public User(Long id, String userName, String realName, Long instituteId, String password) {
+    public User(long id, String userName, String realName, long instituteId, String password) {
         this.id = id;
         this.userName = userName;
         this.realName = realName;
@@ -23,11 +23,11 @@ public class User  implements Serializable{
         this.password = password;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -47,11 +47,11 @@ public class User  implements Serializable{
         this.realName = realName;
     }
 
-    public Long getInstituteId() {
+    public long getInstituteId() {
         return instituteId;
     }
 
-    public void setInstituteId(Long instituteId) {
+    public void setInstituteId(long instituteId) {
         this.instituteId = instituteId;
     }
 
@@ -61,5 +61,10 @@ public class User  implements Serializable{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "id: " + id + " username: " + userName + " realname: " + realName + " instituteid: " + instituteId + " password: " + password;
     }
 }

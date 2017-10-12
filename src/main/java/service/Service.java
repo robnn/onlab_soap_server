@@ -14,6 +14,7 @@ import java.util.List;
 @WebService
 @SOAPBinding(style = SOAPBinding.Style.RPC)
 public interface Service {
+    boolean authenticate();
     @WebMethod
     User register(User u);
     @WebMethod
