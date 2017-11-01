@@ -10,9 +10,9 @@ import java.util.ArrayList;
 /**
  * Created by robin on 4/6/17.
  */
-public interface DataAccesLayer {
+public interface DataAccessLayer {
     //institute
-    void connect(String username, String password) throws CouldNotConnectException, ClassNotFoundException, CouldNotConnectException;
+    void connect(String username, String password) throws ClassNotFoundException, CouldNotConnectException;
     ArrayList<Institute> allInstituteQuery();
     Institute byIdQuery(long id);
     void addInstituteQuery(Institute institute);

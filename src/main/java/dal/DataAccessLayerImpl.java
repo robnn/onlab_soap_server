@@ -10,14 +10,13 @@ import model.User;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by robin on 4/6/17.
  */
-public class OnlabDal implements DataAccesLayer {
+public class DataAccessLayerImpl implements DataAccessLayer {
 
-    private static OnlabDal instance = null;
+    private static DataAccessLayerImpl instance = null;
     private Connection connection;
     private static final String driverName = "oracle.jdbc.driver.OracleDriver";
     private static final String databaseUrl = "jdbc:oracle:thin:@172.17.0.2:1521:xe";
@@ -28,9 +27,9 @@ public class OnlabDal implements DataAccesLayer {
         }
     }
 
-    public static OnlabDal getInstance() {
+    public static DataAccessLayerImpl getInstance() {
         if(instance==null){
-            instance = new OnlabDal();
+            instance = new DataAccessLayerImpl();
         }
         return  instance;
     }

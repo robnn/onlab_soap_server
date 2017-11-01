@@ -1,10 +1,11 @@
 package model;
 
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.*;
 import java.io.Serializable;
-@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlAccessorType(XmlAccessType.PROPERTY)
+//@XmlType(propOrder = {"id","userName","realName","instituteId","password"})
+@XmlRootElement
 public class User  implements Serializable{
     private long id;
     private String userName;
@@ -27,37 +28,42 @@ public class User  implements Serializable{
         return id;
     }
 
+    @XmlElement(name = "id")
     public void setId(long id) {
         this.id = id;
     }
-
+    @XmlElement(name = "userName")
     public String getUserName() {
         return userName;
     }
 
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
+    @XmlElement(name = "")
     public String getRealName() {
         return realName;
     }
 
+
     public void setRealName(String realName) {
         this.realName = realName;
     }
-
+    @XmlElement(name = "instituteId")
     public long getInstituteId() {
         return instituteId;
     }
 
+
     public void setInstituteId(long instituteId) {
         this.instituteId = instituteId;
     }
-
+    @XmlElement(name = "password")
     public String getPassword() {
         return password;
     }
+
 
     public void setPassword(String password) {
         this.password = password;

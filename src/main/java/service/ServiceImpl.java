@@ -1,14 +1,12 @@
 package service;
 
-import dal.DataAccesLayer;
-import dal.OnlabDal;
+import dal.DataAccessLayer;
+import dal.DataAccessLayerImpl;
 import dal.exception.CouldNotConnectException;
 import model.*;
 
 import javax.annotation.Resource;
 import javax.jws.WebService;
-import javax.xml.soap.SOAPBody;
-import javax.xml.soap.SOAPEnvelope;
 import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.handler.MessageContext;
 import java.util.List;
@@ -26,7 +24,7 @@ public class ServiceImpl implements Service {
     private static final String dbUsername = "system";
     private static final String dbPassword = "oracle";
 
-    private DataAccesLayer dl = OnlabDal.getInstance();
+    private DataAccessLayer dl = DataAccessLayerImpl.getInstance();
     private static final Logger logger = Logger.getLogger("Service");
     public ServiceImpl() throws CouldNotConnectException, ClassNotFoundException {
         dl.connect(dbUsername, dbPassword);
