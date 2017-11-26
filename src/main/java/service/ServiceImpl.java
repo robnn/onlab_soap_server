@@ -49,7 +49,6 @@ public class ServiceImpl implements Service {
 
     @Override
     public User register(User u) {
-        MessageContext messageContext = webServiceContext.getMessageContext();
         logger.info("Recieved register request with user: " + u.toString());
         return dl.registerQuery(u);
     }
